@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-go-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-go-server
+  template:
+    metadata:
+      labels:
+        app: simple-go-server
+    spec:
+      containers:
+        - name: simple-go-server
+          image: rinkiyakedad/simple-go-server
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple-go-server
+spec:
+  selector:
+    app: simple-go-server
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
