@@ -1,0 +1,23 @@
+build:
+  simple-go-server:
+    image: rinkiyakedad/simple-go-server
+    context: .
+
+deploy:
+  - kubectl apply --filename k8s.yaml
+
+dev:
+  simple-go-server:
+    image: okteto/golang:1
+    command: bash
+    sync:
+      - .:/usr/src/app
+    volumes:
+      - /go
+      - /root/.cache
+    securityContext:
+      capabilities:
+        add:
+          - SYS_PTRACE
+    forward:
+      - 8080:8080
