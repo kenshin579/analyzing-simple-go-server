@@ -20,4 +20,4 @@ dev:
         add:
           - SYS_PTRACE
     forward:
-      - 8080:8080
+      - 4000:4000

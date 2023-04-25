@@ -11,8 +11,8 @@ func main() {
 		fmt.Fprintf(w, "Hello World!")
 	})
 
-	fmt.Printf("Starting server at port 8080\n")
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	fmt.Printf("Starting server at port 4000\n")
+	if err := http.ListenAndServe(":4000", nil); err != nil {
 		log.Fatal(err)
 	}
 }

@@ -16,7 +16,7 @@ spec:
         - name: simple-go-server
           image: rinkiyakedad/simple-go-server
           ports:
-            - containerPort: 8080
+            - containerPort: 4000
           imagePullPolicy: Always
 ---
 apiVersion: v1
@@ -29,5 +29,5 @@ spec:
   ports:
     - name: http
       port: 80
-      targetPort: 8080
+      targetPort: 4000
   type: LoadBalancer
