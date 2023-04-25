@@ -4,7 +4,7 @@ build:
     context: .
 
 deploy:
-  - kubectl apply --filename k8s.yaml
+  - kubectl apply --filename k8s/k8s.yaml
 
 dev:
   simple-go-server:
