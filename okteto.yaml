@@ -4,7 +4,8 @@ build:
     context: .
 
 deploy:
-  - kubectl apply --filename k8s/k8s.yaml
+  - argocd app create simple-go-server --repo https://github.com/rinkiyakedad/simple-go-server.git --path k8s --dest-server https://kubernetes.default.svc --dest-namespace default
+  - argocd app sync simple-go-server
 
 dev:
   simple-go-server:
