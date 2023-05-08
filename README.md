@@ -1,5 +1,6 @@
 ## Running on Kubernetes
 - Build the docker image from the latest code: `docker build -t rinkiyakedad/simple-go-server --platform=linux/amd64 .`
+- To test it run: `docker run rinkiyakedad/simple-go-server`
 - Push it: `docker push rinkiyakedad/simple-go-server`
 - Apply the manifests: `k apply -f k8s.yaml`
 
