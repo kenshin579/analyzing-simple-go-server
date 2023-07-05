@@ -4,7 +4,7 @@ build:
     context: .
 
 deploy:
-  - argocd app create simple-go-server --repo https://github.com/rinkiyakedad/simple-go-server.git --path k8s --dest-server https://kubernetes.default.svc --dest-namespace default
+  - argocd app create simple-go-server --repo https://github.com/rinkiyakedad/simple-go-server.git --path k8s --dest-server https://kubernetes.default.svc --dest-namespace $OKTETO_NAMESPACE
   - argocd app sync simple-go-server
 
 dev:
