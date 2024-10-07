@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: simple-go-server
-          image: rinkiyakedad/simple-go-server
+          image: kenshin579/simple-go-server
           ports:
             - containerPort: 4000
           imagePullPolicy: Always
